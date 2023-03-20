@@ -23,7 +23,7 @@ export default function Home({shibas}: any) {
     }
     observer.current = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting) {
-        fetch('http://shibe.online/api/shibes?count=9&urls=true&httpsUrls=true')
+        fetch('https://shibe.online/api/shibes?count=9&urls=true&httpsUrls=true')
         .then(shibas => shibas.json())
         .then(shibesJSON => setShibes(oldShibes => [...oldShibes, ...shibesJSON]))
         .finally(() => {
@@ -62,7 +62,7 @@ export default function Home({shibas}: any) {
   )
 }
 export async function getStaticProps() {
-  const shibes = await fetch('http://shibe.online/api/shibes?count=9&urls=true&httpsUrls=true')
+  const shibes = await fetch('https://shibe.online/api/shibes?count=9&urls=true&httpsUrls=true')
   const shibesJSON = await shibes.json()
   return {
     props: {
