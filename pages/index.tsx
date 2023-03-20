@@ -12,24 +12,21 @@ const roboto = Roboto({
 export default function Home({shibes}) {
   console.log(shibes)
   return (
-    <div className="h-screen w-screen p-5 bg-[#03001C] text-[#B6EADA]">
+    <div className="h-screen w-screen p-5">
       <header>
         <div className="flex flex-row items-center justify-between">
-          <h1><Link href="/">Shibe Museum</Link></h1>
+          <h1 className="text-5xl"><Link href="/">Shibe Museum</Link></h1>
         </div>
       </header>
       <main>
         <div>
-          <h2 className="">The website to truly experience the best of shibes</h2>
-          <div className="grid grid-cols-3 auto-rows-auto">
-            {shibes.map(shibe => <Image key={shibe} width={200} height={200} src={shibe} alt="it's a shibe" />
+          <h2 className="text-lg text-center my-20">The website to truly experience the best of shibes</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
+            {shibes.map(shibe => <Image key={shibe} width={400} height={400} src={shibe} alt="it's a shibe" />
             )}
           </div>
         </div>
       </main>
-      <footer>
-        <div className="w-full h-full block mt-auto">Made with love by Sean Quach :))</div>
-      </footer>
     </div>
   )
 }
