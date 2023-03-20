@@ -42,7 +42,7 @@ export default function Home({shibas}) {
       </header>
       <main>
         <div>
-          <h2 className="text-2xl text-center my-20">Because who wouldn't want more shibes in their lives?</h2>
+          <h2 className="text-2xl text-center my-20">{"Because who wouldn't want more shibes in their lives?"}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
             {shibes.map((shibe, index) => {
               if(shibes.length === index + 1) {
