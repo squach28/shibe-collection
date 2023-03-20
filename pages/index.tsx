@@ -11,14 +11,16 @@ const roboto = Roboto({
 
   })
 
-export default function Home({shibas}) {
+export default function Home({shibas}: any) {
 
   const [shibes, setShibes] = useState([...shibas])
   const [position, setPosition] = useState(0)
 
-  const observer = useRef()
-  const lastShibeElementRef = useCallback(node => {
-    if(observer.current) observer.current.disconnect()
+  const observer: any = useRef()
+  const lastShibeElementRef = useCallback((node: any) => {
+    if(observer.current) { 
+      observer.current.disconnect()
+    }
     observer.current = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting) {
         fetch('http://shibe.online/api/shibes?count=9&urls=true&httpsUrls=true')
@@ -42,7 +44,7 @@ export default function Home({shibas}) {
       </header>
       <main>
         <div>
-          <h2 className="text-2xl text-center my-20">{"Because who wouldn't want more shibes in their lives?"}</h2>
+          <h2 className="text-xl text-center my-20">{"Because who wouldn't want more shibes in their lives?"}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-items-center">
             {shibes.map((shibe, index) => {
               if(shibes.length === index + 1) {
